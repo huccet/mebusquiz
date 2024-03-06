@@ -236,18 +236,37 @@
 
       let title = '';
 
-      if (successRate >= 80) {
+      if (successRate >= 90) {
         title = 'Yarın gel meclis başkanı olarak işe başla.';
-        audio_path = "./ses/baykal.mp3"
-      } else if (successRate >= 60) {
+        audio_path = "./ses/90.mp3"
+      } else if (successRate >= 80) {
+        title = 'Aday ol, oy verelim reis!';
+        audio_path = "./ses/80.mp3"
+      } else if (successRate >= 70) { 
+        title = 'Meclisin sana ihtiyacı var.';
+        audio_path = "./ses/70.mp3"
+      } else if (successRate >= 60) { 
+        title = 'Baban milletvekili mi?';
+        audio_path = "./ses/60.mp3"
+      } else if (successRate >= 50) { 
         title = 'Hiç siyasete atılmayı düşündün mü?';
-        audio_path = "./ses/40yapar.mp3"
+        audio_path = "./ses/50.mp3"
       } else if (successRate >= 40) { 
         title = 'Meclisle pek aran yok sanki...';
-        audio_path = "./ses/sevgilimusa.mp3"
-      } else {
+        audio_path = "./ses/40.mp3"
+      } else if (successRate >= 30) { 
+        title = 'Yeraltından notlar II`yi yazmaya devam et sen knk';
+        audio_path = "./ses/30.mp3"
+      } else if (successRate >= 20) { 
+        title = 'Belediye seçimlerinde Murat İmamoğluna oy vereceksin galiba.';
+        audio_path = "./ses/20.mp3"
+      } else if (successRate >= 10) { 
+        title = 'Tebrikler, meclistekiler kadar siyaset bilgin var :).';
+        audio_path = "./ses/10.mp3"
+      }  
+      else {
         title = 'Sen iyisi mi hiç siyasete bulaşma :D';
-        audio_path = "./ses/57yanlış.mp3"
+        audio_path = "./ses/0.mp3"
       }
       const audio = new Audio(audio_path);
       audio.play();
