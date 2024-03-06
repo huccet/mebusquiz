@@ -123,7 +123,7 @@
     <div id="quiz-container"></div>
     <div id="scoreboard" class="scoreboard">Doğru: 0 | Yanlış: 0</div>
     <br/>
-    <button id="reset-button">Skoru Sıfırla</button>
+    <button id="reset-button" style="width: 96px; height: 36px;">Sıfırla</button>
     <br/>
     <details class="about">
       <summary>Hakkında</summary>
@@ -214,6 +214,7 @@
 
     quizContainer.innerHTML = `<div class="image-container">
       <img src="${currentVekil.imageURL}" alt="Milletvekili Image">
+      <p>${currentVekil.name}</p>
     </div>
     <p>Hangi parti?</p>
     ${allAnswers.map(answer => `<button class="answer-button" onclick="checkAnswer('${correctAnswer}', '${answer}')"><img src="logo/${answer}.png" width=48 height=64/></button>`).join('')}
@@ -223,7 +224,7 @@
   async function checkQuestionCount() {
     totalQuestionsAnswered++;
 
-    if (totalQuestionsAnswered % 20 === 0) {
+    if (totalQuestionsAnswered % 10 === 0) {
       const successRate = ((correctScore / totalQuestionsAnswered) * 100).toFixed(2);
 
       let title = '';
