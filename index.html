@@ -24,8 +24,13 @@
     }
 
     .answer-button {
-      margin: 5px;
-      padding: 10px 20px;
+      margin: 20px;
+      width: 60px;
+      border: 0;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      height: 72px;
       font-size: 16px;
       cursor: pointer;
     }
@@ -211,7 +216,7 @@
       <img src="${currentVekil.imageURL}" alt="Milletvekili Image">
     </div>
     <p>Hangi parti?</p>
-    ${allAnswers.map(answer => `<button class="answer-button" onclick="checkAnswer('${correctAnswer}', '${answer}')">${answer}</button>`).join('')}
+    ${allAnswers.map(answer => `<button class="answer-button" onclick="checkAnswer('${correctAnswer}', '${answer}')"><img src="logo/${answer}.png" width=48 height=64/></button>`).join('')}
     `;
   }
 
