@@ -119,7 +119,6 @@
     <br/>
     <button id="reset-button">Skoru Sıfırla</button>
     <br/>
-   
     <details class="about">
       <summary>Hakkında</summary>
       <p>Veriler herkese açık olarak yayınlanan <a href="https://www.tbmm.gov.tr/milletvekili/liste" target="_blank">28. DÖNEM MİLLETVEKİLLERİ LİSTESİ</a>nden alınmaktadır.</p>
@@ -225,14 +224,20 @@
 
       if (successRate >= 80) {
         title = 'Yarın gel meclis başkanı olarak işe başla.';
+        audio_path = "./ses/baykal.mp3"
       } else if (successRate >= 60) {
         title = 'Hiç siyasete atılmayı düşündün mü?';
+        audio_path = "./ses/40yapar.mp3"
       } else if (successRate >= 40) { 
         title = 'Meclisle pek aran yok sanki...';
+        audio_path = "./ses/sevgilimusa.mp3"
       } else {
         title = 'Sen iyisi mi hiç siyasete bulaşma :D';
+        audio_path = "./ses/57yanlış.mp3"
       }
-
+      const audio = new Audio(audio_path);
+      audio.play();
+      
       Swal.fire({
         title: title,
         text: `%${successRate} oranla doğru bildin. Devam mı baştan mı?`,
